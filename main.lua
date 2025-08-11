@@ -37,14 +37,28 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+Rayfield:Notify({
+   Title = "RussainHub",
+   Content = "Russainspy is very pregnant",
+   Duration = 6.5,
+   Image = 4483362458,
+})
 
 local Tab = Window:CreateTab("main", 4483362458)
 
+local Slider = Tab:CreateSlider({
+   Name = "speed",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Walkspeed",
+   CurrentValue = 10,
+   Flag = "Walkspeed", 
+   Callback = function(Value)
+   local player = game.Players.LocalPlayer
+            if player and player.Character and player.Character:FindFirstChild("Humanoid") then
+                player.Character.Humanoid.WalkSpeed = Value
+            end
+   end,
+})
 
 
-
-
-
-
-
-local Tab = Window:CreateTab("Visuals", 4483362458) 
