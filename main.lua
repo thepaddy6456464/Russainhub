@@ -1,4 +1,9 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ESP.Players = true
+ESP.Boxes = true
+ESP.Names = true
+ESP:Toggle(true)
 
 local Window = Rayfield:CreateWindow({
    Name = "Russainhub",
@@ -51,13 +56,9 @@ local MainButton = MainTab:CreateButton({
    Callback = function()
    -- loadstring
    wait(1)
-local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
- 
+
 -- config
-ESP.Players = true
-ESP.Boxes = true
-ESP.Names = true
-ESP:Toggle(true)
+
  
 -- object
 ESP:AddObjectListener(Workspace, { game:GetService("Workspace").Skyscraper.Base
