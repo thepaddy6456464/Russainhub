@@ -46,6 +46,30 @@ Rayfield:Notify({
 
 local MainTab = Window:CreateTab("main", 4483362458)
 
+local MainButton = MainTab:CreateButton({
+   Name = "esp prototype",
+   Callback = function()
+   -- loadstring
+   wait(1)
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ 
+-- config
+ESP.Players = true
+ESP.Boxes = true
+ESP.Names = true
+ESP:Toggle(true)
+ 
+-- object
+ESP:AddObjectListener(Workspace, { game:GetService("Workspace").Skyscraper.Base
+    Name = "weirdo", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 0, 0), -- Color
+    IsEnabled = "whatever" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whatever = true
+   end,
+})
+
 local WalkspeedSlider = MainTab:CreateSlider({
    Name = "speed",
    Range = {0, 300},
